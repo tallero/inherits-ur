@@ -103,7 +103,7 @@ _pkgdesc=(
 pkgdesc="${_pkgdesc[*]}"
 _commit="9a2c29400c6d491e0b7beefe0c32efa3b462545d"
 pkgver=2.0.4
-pkgrel=1
+pkgrel=2
 arch=(
   'any'
 )
@@ -134,7 +134,7 @@ elif [[ "${_npm}" == "false" ]]; then
   _tag_name="commit"
 fi
 _tarname="${_pkg}-${_tag}"
-_npm_tarname="${_pkg}-${_tag}"
+_npm_tarname="${_tarname}"
 _tarfile="${_tarname}.${_archive_format}"
 _npm_tarfile="${_npm_tarname}.${_archive_format}"
 _sum="fc02da8e097a6ac82263a68a5fa441a9b8d0cc8d7e34551341460fea7b4f0619"
@@ -201,7 +201,7 @@ elif [[ "${_evmfs}" == "false" ]]; then
     sha512sums=(
       "${_npm_sha512_sum}"
     )
-    _uri="${_npm_http}/@${_ns}/${_pkg}/-/${_tarfile}"
+    _uri="${_npm_http}/${_pkg}/-/${_tarfile}"
   elif [[ "${_npm}" == "false" ]]; then
     if [[ "${_tag_name}" == 'pkgver' ]]; then
       if [[ "${_git_http}" == "gitlab" ]]; then
